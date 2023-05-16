@@ -2,11 +2,13 @@
 import Content from "./components/content/content";
 import Header from "./components/header/Header";
 import { esData } from "./public/texts/es";
-import { ContentProps } from "./components/content/content";
+import localFont from 'next/font/local';
+const Raleway = localFont({ src: '../app/public/fonts/Raleway-VariableFont_wght.ttf'})
+
 
 export default function Home() {
   return (
-    <main>
+    <main className={Raleway.className}>
       <Header></Header>
       {esData.main.map((item) => {
         return (
