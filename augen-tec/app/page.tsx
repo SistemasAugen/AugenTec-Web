@@ -1,5 +1,6 @@
 "use client";
 import Content from "./components/content/content";
+import Equipment from "./components/equipment/equipment";
 import Header from "./components/header/Header";
 import { esData } from "./public/texts/es";
 import localFont from 'next/font/local';
@@ -18,6 +19,16 @@ export default function Home() {
             colorTitle={item.colorTitle}
             title={item.title}
             text={item.text}></Content>
+        );
+      })}
+      {esData.equipos.map((item) => {
+        return (
+          <Equipment
+            key={item.imageData.alt}
+            imgData={item.imageData}
+            colorBorder={item.colorBorder}
+            title={item.title}
+            text={item.text}></Equipment>
         );
       })}
     </main>

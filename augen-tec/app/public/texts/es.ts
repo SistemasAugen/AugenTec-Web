@@ -5,6 +5,7 @@ import Bloqueadora from "@/images/Bloqueadora.png";
 import Generador from "@/images/Generador.png";
 import Pulidora from "@/images/Pulidora.png";
 import Laser from "@/images/Laser.png";
+import { BorderPosition } from "@/app/components/equipment/equipment";
 
 export const esData = {
   main: [
@@ -42,8 +43,12 @@ export const esData = {
       imageData: {
         src: Bloqueadora,
         alt: "Bloqueadora rápida FF-SB",
+        height: '200px'
       },
-      color: "#cfcece",
+      colorBorder: {
+        color: "#cfcece",
+        position: BorderPosition.left
+      },
       title: "Bloqueadora Rápida FF-SB",
       text: "Un sistema de sujeción de lentes por metal líquido de baja temperatura (52ºc). Utiliza sólo 1 mm de espesor de metal, que se enfría en solo 15 segundos, evitando la deformación de la lente. El prisma necesario para desplazar el centro óptico se da en el generador de superficies, evitando errores del operario",
     },
@@ -51,8 +56,12 @@ export const esData = {
       imageData: {
         src: Generador,
         alt: "Generador de Forma Libre",
+        height: '350px'
       },
-      color: "#007960",
+      colorBorder: {
+        color: "#007960",
+        position: BorderPosition.right
+      },
       title: "Generador de Forma Libre FF-Víctor 4",
       text: "Un sistema de sujeción de lentes por metal líquido de baja temperatura (52ºc). Utiliza sólo 1 mm de espesor de metal, que se enfría en solo 15 segundos, evitando la deformación de la lente. El prisma necesario para desplazar el centro óptico se da en el generador de superficies, evitando errores del operario",
     },
@@ -60,8 +69,12 @@ export const esData = {
       imageData: {
         src: Pulidora,
         alt: "Pulidora Rápida",
+        height: '350px'
       },
-      color: "#c49907",
+      colorBorder: {
+        color: "#c49907",
+        position: BorderPosition.left
+      },
       title: "Pulidora Rápida FF-COMPACT",
       text: "Una pulidora silenciosa, de dos minutos por ciclo. Con un pulido brillante y profundo, respeta fielmente el diseño y ofrece graduaciones con gran precisión. Con costos mínimos de insumos, es capaz de procesar hasta 100 superficies por herramienta. Sólo bastan 3 de ellas para todo el rango de graduaciones. Pantalla táctil.",
     },
@@ -69,8 +82,12 @@ export const esData = {
       imageData: {
         src: Laser,
         alt: "Grabado Láser",
+        height: '330px'
       },
-      color: "#007960",
+      colorBorder: {
+        color: "#007960",
+        position: BorderPosition.right
+      },
       title: "Grabado Láser LFL-2020",
       text: "Graba en fracción de segundos. Es fácil de usar. Graba todo tipo de termoplásticos, metal, vidrio, madera y materiales orgánicos. La pantalla táctil de 17” permite un control máximo de programación y comandos. Cuenta con cámara de video para posicionamiento de monturas para grabados de logotipos y marcas registradas",
     },
