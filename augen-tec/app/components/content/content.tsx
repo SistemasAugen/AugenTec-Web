@@ -2,6 +2,7 @@ import { StaticImageData } from "next/image";
 import React from "react";
 import Image from "next/image";
 import styles from "./content.module.css";
+import { Grid } from "@mui/material";
 export interface ContentProps {
   imgData: {
     src: StaticImageData;
@@ -19,12 +20,15 @@ export default function content({
   colorTitle,
 }: ContentProps) {
   return (
-    <>
-      <Image
-        src={imgData.src}
-        alt={imgData.alt}
-        className={styles.image}></Image>
-      <div className={styles.textContainer}>
+    <Grid container>
+      <Grid item xs={12} md={5}>
+        <Image
+          src={imgData.src}
+          alt={imgData.alt}
+          className={styles.image}>
+        </Image>
+      </Grid>
+      <Grid xs={12} md={7} item className={styles.textContainer}>
         {colorTitle && (
           <span
             className={styles.colorTitle}
@@ -34,7 +38,7 @@ export default function content({
         )}
         <span className={styles.title}>{title}</span>
         <p className={styles.text}>{text}</p>
-      </div>
-    </>
+      </Grid>
+    </Grid>
   );
 }
