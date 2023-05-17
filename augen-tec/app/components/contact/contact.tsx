@@ -27,7 +27,7 @@ export default function contact({ title, text, socials }: ContactProps) {
             <span>{ text }</span>
         </Grid>
         {socials.map(item => (
-            <Grid item xs={12} className={styles.socialsIcons} onClick={() => handleSocialNetworkLink(item.url)}>
+            <Grid item key={item.text} xs={12} className={styles.socialsIcons} onClick={() => handleSocialNetworkLink(item.url)}>
                 <item.icon className={styles.icon}></item.icon><span> { item.text }</span>
             </Grid>
         ))}

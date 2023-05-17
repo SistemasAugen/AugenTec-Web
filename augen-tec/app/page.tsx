@@ -6,10 +6,19 @@ import Equipment from "./components/equipment/equipment";
 import Contact from "./components/contact/contact";
 import localFont from 'next/font/local';
 import styles from './page.module.css';
+import YouTube from 'react-youtube';
 const Raleway = localFont({ src: '../app/public/fonts/Raleway-VariableFont_wght.ttf'});
 import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
 import { Grid } from "@mui/material";
 
+const videoId = 'pS-J14hPrlI';
+const opts = {
+  width: '100%',
+  height: '400px',
+  playerVars: {
+    autoplay: 1,
+  },
+};
 
 export default function Home() {
   const handleDownloadBrochureClick = () => {
@@ -29,6 +38,7 @@ export default function Home() {
             text={item.text}></Content>
         );
       })}
+      <YouTube className={styles.videoPlayer} videoId={videoId} opts={opts} />
       {esData.equipos.map((item) => {
         return (
           <Equipment
