@@ -1,13 +1,20 @@
 "use client";
+import { esData } from "./public/texts/es";
 import Content from "./components/content/content";
 import Equipment from "./components/equipment/equipment";
 import Header from "./components/header/Header";
-import { esData } from "./public/texts/es";
 import localFont from 'next/font/local';
-const Raleway = localFont({ src: '../app/public/fonts/Raleway-VariableFont_wght.ttf'})
+import styles from './page.module.css';
+const Raleway = localFont({ src: '../app/public/fonts/Raleway-VariableFont_wght.ttf'});
+import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import { Grid } from "@mui/material";
 
 
 export default function Home() {
+  const handleDownloadBrochureClick = () => {
+    window.open('/api/download-file', '_blank');
+  }
+
   return (
     <main className={Raleway.className}>
       <Header></Header>
@@ -31,6 +38,9 @@ export default function Home() {
             text={item.text}></Equipment>
         );
       })}
+      <Grid container direction="row" justifyContent="center" alignItems="center">
+        <span onClick={handleDownloadBrochureClick} className={styles.downloadButton}> <DownloadForOfflineIcon sx={{ color: "#007960" }} /> Descargar Brochure</span>
+      </Grid>
     </main>
   );
 }
