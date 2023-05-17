@@ -6,6 +6,11 @@ import Generador from "@/images/Generador.png";
 import Pulidora from "@/images/Pulidora.png";
 import Laser from "@/images/Laser.png";
 import { BorderPosition } from "@/app/components/equipment/equipment";
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export const esData = {
   main: [
@@ -92,4 +97,35 @@ export const esData = {
       text: "Graba en fracción de segundos. Es fácil de usar. Graba todo tipo de termoplásticos, metal, vidrio, madera y materiales orgánicos. La pantalla táctil de 17” permite un control máximo de programación y comandos. Cuenta con cámara de video para posicionamiento de monturas para grabados de logotipos y marcas registradas",
     },
   ],
+  contact: {
+    title: "Contáctanos",
+    text: "Sabemos que hacerte de un laboratorio es una decisión compleja. Pero también sabemos que la mejor forma de tomar esa decisión es charlando y resolviendo tus dudas de una forma cercana. Contáctanos si tienes alguna duda o si te interesa conocer nuestros equipos. Estamos abiertos.",
+    socials: [
+      {
+        icon: WhatsAppIcon,
+        url: "https://wa.me/3310620319",
+        text: "(+52) 33 1062 0319"
+      },
+      {
+        icon: FacebookIcon,
+        url: "https://www.facebook.com/Augen.Tec/",
+        text: "Augen.Tec"
+      },
+      {
+        icon: InstagramIcon,
+        url: "https://www.instagram.com/augen_tec/ ",
+        text: "Augen_tec"
+      },
+      {
+        icon: YouTubeIcon,
+        url: "https://www.youtube.com/@AugenTec",
+        text: "@Augentec"
+      },
+      {
+        icon: LinkedInIcon,
+        url: "https://www.linkedin.com/company/augen-tec/",
+        text: "Company/Augen-Tec"
+      }
+    ]
+  }
 };

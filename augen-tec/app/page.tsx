@@ -1,8 +1,9 @@
 "use client";
 import { esData } from "./public/texts/es";
+import Header from "./components/header/Header";
 import Content from "./components/content/content";
 import Equipment from "./components/equipment/equipment";
-import Header from "./components/header/Header";
+import Contact from "./components/contact/contact";
 import localFont from 'next/font/local';
 import styles from './page.module.css';
 const Raleway = localFont({ src: '../app/public/fonts/Raleway-VariableFont_wght.ttf'});
@@ -38,9 +39,12 @@ export default function Home() {
             text={item.text}></Equipment>
         );
       })}
-      <Grid container direction="row" justifyContent="center" alignItems="center">
-        <span onClick={handleDownloadBrochureClick} className={styles.downloadButton}> <DownloadForOfflineIcon sx={{ color: "#007960" }} /> Descargar Brochure</span>
+      <Grid container justifyContent={"center"}>
+        <span onClick={handleDownloadBrochureClick} className={styles.downloadButton}>
+          <DownloadForOfflineIcon sx={{ color: "#007960", fontSize: "50px", marginRight: "20px" }} /> Descargar Brochure
+        </span>
       </Grid>
+      <Contact {...esData.contact}></Contact>
     </main>
   );
 }
