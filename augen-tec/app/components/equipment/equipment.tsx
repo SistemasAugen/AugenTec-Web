@@ -9,6 +9,7 @@ export const BorderPosition = {
 }
 
 export interface EquipmentModel {
+    id?: string,
     imgData: {
         src: StaticImageData,
         alt: string,
@@ -23,9 +24,9 @@ export interface EquipmentModel {
     text: string,
 }
 
-export default function equipment({ imgData, colorBorder, title, text }: EquipmentModel) {
+export default function equipment({ imgData, colorBorder, title, text, id }: EquipmentModel) {
   return (
-    <Grid container className={styles.container}>
+    <Grid container className={styles.container} id={id || title}>
         { colorBorder.position == BorderPosition.left && <Grid item xs={1} style={{ backgroundColor: colorBorder.color }}></Grid>}
         <Grid item xs={11} className={colorBorder.position == BorderPosition.left? styles.containerRight : styles.containerLeft }>
             <Image

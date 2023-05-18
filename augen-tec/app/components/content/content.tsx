@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "./content.module.css";
 import { Grid } from "@mui/material";
 export interface ContentProps {
+  id?: string,
   imgData: {
     src: StaticImageData;
     alt: string;
@@ -18,9 +19,10 @@ export default function content({
   title,
   text,
   colorTitle,
+  id
 }: ContentProps) {
   return (
-    <Grid container>
+    <Grid container id={id || title}>
       <Grid item xs={12} md={5}>
         <Image
           src={imgData.src}

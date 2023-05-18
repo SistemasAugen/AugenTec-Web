@@ -20,6 +20,7 @@ export const esData = {
         alt: "Torre augen labs",
       },
       title: "Innovación y desarrollo para la industria óptica",
+      id: "AugenTec",
       text: "Somos parte de un grupo de compañías dedicadas a ofrecer soluciones a toda la cadena de necesidades de la industria óptica. Desde la investigación y el diseño de nuevos materiales, hasta nuestra red de laboratorios, ofrecemos a la industria maquinaria, insumos y materiales de la más alta calidad",
     },
     {
@@ -31,6 +32,7 @@ export const esData = {
         color: "#007960",
         text: "LabONE",
       },
+      id: "Sistema",
       title: "Más que máquinas, un sistema.",
       text: "Si lo que buscas es montar un laboratorio óptico o, si bien, estás evaluando opciones para renovar el que ya tienes, te ofrecemos la respuesta más práctica del mercado: un sistema total que te simplificará la operación. Un equipo de máquinas eficientes por sí mismas que, juntas, completan un proceso ideal, fluido y bien coordinado. Porque no necesitas un par de máquinas nuevas que te darán nuevos problemas. Necesitas un sistema que solo te dé soluciones.",
     },
@@ -54,6 +56,7 @@ export const esData = {
         color: "#cfcece",
         position: BorderPosition.left
       },
+      id: "Maquinaria",
       title: "Bloqueadora Rápida FF-SB",
       text: "Un sistema de sujeción de lentes por metal líquido de baja temperatura (52ºc). Utiliza sólo 1 mm de espesor de metal, que se enfría en solo 15 segundos, evitando la deformación de la lente. El prisma necesario para desplazar el centro óptico se da en el generador de superficies, evitando errores del operario",
     },
@@ -98,6 +101,7 @@ export const esData = {
     },
   ],
   contact: {
+    id: "Contacto",
     title: "Contáctanos",
     text: "Sabemos que hacerte de un laboratorio es una decisión compleja. Pero también sabemos que la mejor forma de tomar esa decisión es charlando y resolviendo tus dudas de una forma cercana. Contáctanos si tienes alguna duda o si te interesa conocer nuestros equipos. Estamos abiertos.",
     socials: [
