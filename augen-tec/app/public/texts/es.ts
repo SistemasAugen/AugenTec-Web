@@ -71,7 +71,7 @@ export const esData = {
         position: BorderPosition.right
       },
       title: "Generador de Forma Libre FF-Víctor 4",
-      text: "Un sistema de sujeción de lentes por metal líquido de baja temperatura (52ºc). Utiliza sólo 1 mm de espesor de metal, que se enfría en solo 15 segundos, evitando la deformación de la lente. El prisma necesario para desplazar el centro óptico se da en el generador de superficies, evitando errores del operario",
+      text: "Su sistema de pivote evita la vibración típica de los generadores de Forma Libre. Se calibra en fábrica y produce superficies ópticas de alta precisión aún en diseños progresivos. Demanda un mínimo mantenimiento cada 5,000 lentes, por reemplazo de herramienta de corte y, además, su tecnología es amigable con el medio ambiente.",
     },
     {
       imageData: {
