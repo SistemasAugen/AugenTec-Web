@@ -18,7 +18,7 @@ export default function contact({ title, text, socials, id }: ContactProps) {
   const handleSocialNetworkLink = (url: string) => {
     window.open(url,"_blank");
   }
-  console.log("ContactID"+id);
+  
   return (
     <Grid container className={styles.container} id={id || title}>
         <Grid item className={styles.titleContainer}>
