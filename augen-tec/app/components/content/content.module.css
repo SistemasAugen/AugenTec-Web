@@ -12,7 +12,7 @@
 
 .textContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column!important;
   padding: 30px;
   padding-top: 40px;
 }
