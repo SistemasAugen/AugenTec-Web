@@ -17,9 +17,9 @@ import Footer from "./components/footer/footer";
 const videoId = 'pS-J14hPrlI';
 const opts = {
   width: '100%',
-  height: '400px',
+  height: '500px',
   playerVars: {
-    autoplay: 1,
+    autoplay: false,
   },
 };
 
@@ -44,29 +44,33 @@ export default function Home() {
       </div>
       <main className={Raleway.className}>
         <Menu MenuOptions={MenuOptions} />
-        {esData.main.map((item) => {
-          return (
-            <Content
-              id={item.id}
-              key={item.imageData.alt}
-              imgData={item.imageData}
-              colorTitle={item.colorTitle}
-              title={item.title}
-              text={item.text}></Content>
-          );
-        })}
+        <Grid container className={styles.equipmentContainer}>
+          {esData.main.map((item) => {
+            return (
+              <Content
+                id={item.id}
+                key={item.imageData.alt}
+                imgData={item.imageData}
+                colorTitle={item.colorTitle}
+                title={item.title}
+                text={item.text}></Content>
+            );
+          })}
+        </Grid>
         <YouTube className={styles.videoPlayer} videoId={videoId} opts={opts} />
-        {esData.equipos.map((item) => {
-          return (
-            <Equipment
-              id={item.id}
-              key={item.imageData.alt}
-              imgData={item.imageData}
-              colorBorder={item.colorBorder}
-              title={item.title}
-              text={item.text}></Equipment>
-          );
-        })}
+        <Grid container className={styles.equipmentContainer}>
+          {esData.equipos.map((item) => {
+            return (
+              <Equipment
+                id={item.id}
+                key={item.imageData.alt}
+                imgData={item.imageData}
+                colorBorder={item.colorBorder}
+                title={item.title}
+                text={item.text}></Equipment>
+            );
+          })}
+        </Grid>
         <Grid container justifyContent={"center"}>
           <span onClick={handleDownloadBrochureClick} className={styles.downloadButton}>
             <DownloadForOfflineIcon sx={{ color: "#007960", fontSize: "50px", marginRight: "20px" }} /> Descargar Brochure

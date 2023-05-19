@@ -26,7 +26,7 @@ export interface EquipmentModel {
 
 export default function equipment({ imgData, colorBorder, title, text, id }: EquipmentModel) {
   return (
-    <Grid container className={styles.container} id={id || title}>
+    <Grid container xs={12} md={6} className={styles.container} id={id || title}>
         { colorBorder.position == BorderPosition.left && <Grid item xs={1} style={{ backgroundColor: colorBorder.color }}></Grid>}
         <Grid item xs={11} className={colorBorder.position == BorderPosition.left? styles.containerRight : styles.containerLeft }>
             <Image

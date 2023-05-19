@@ -22,7 +22,7 @@ export default function content({
   id
 }: ContentProps) {
   return (
-    <Grid container id={id || title}>
+    <Grid container xs={12} md={6} id={id || title}>
       <Grid item xs={12} md={5}>
         <Image
           src={imgData.src}
