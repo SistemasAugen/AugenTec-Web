@@ -8,12 +8,16 @@ import Image from "next/image";
 import { MenuOption } from '../menu/menu';
 
 export default function footer({ MenuOptions }: { MenuOptions: MenuOption[] }) {
+    const handleAugenIconClick = () => {
+        window.open("http://augenopticos.com", "_blank");
+    }
+
     return (
         <Grid container className={styles.footerContainer}>
             <Grid item xs={7} className={styles.footerImageContainer}>
                 <div className={styles.imagesContainer}>
                     <Image src={logoImg} alt="Augen-tec" className={styles.logo}></Image>
-                    <Image src={footerImage} alt="Augen-tec" className={styles.footerLogo}></Image>
+                    <Image onClick={handleAugenIconClick} src={footerImage} alt="Augen-tec" className={styles.footerLogo}></Image>
                 </div>
             </Grid>
             <Grid item xs={5} className={styles.footerMenuContainer}>
