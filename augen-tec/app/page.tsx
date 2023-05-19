@@ -4,7 +4,7 @@ import Header from "./components/header/Header";
 import Content from "./components/content/content";
 import Equipment from "./components/equipment/equipment";
 import Contact from "./components/contact/contact";
-import Menu from './components/menu/menu';
+import Menu, { MenuOption } from './components/menu/menu';
 import YouTube from 'react-youtube';
 import localFont from 'next/font/local';
 import styles from './page.module.css';
@@ -22,20 +22,20 @@ const opts = {
     autoplay: false,
   },
 };
-
-// Esto debe coincidir con el id establecido en /public/texts/es.ts
-export const MenuOptions = [
-  {value:'AUGEN TEC', key: 'AugenTec'},
-  {value:'SISTEMA LAB ONE', key: 'Sistema'},
-  {value:'MAQUINARIA', key: 'Maquinaria'},
-  {value:'CONTÁCTANOS', key: 'Contacto'}
-];
-
 export default function Home() {
 
   const handleDownloadBrochureClick = () => {
     window.open('/api/download-file', '_blank');
   }
+
+  // Esto debe coincidir con el id establecido en /public/texts/es.ts
+  const MenuOptions: MenuOption[] = [
+    { value: 'AUGEN TEC', key: 'AugenTec' },
+    { value: 'SISTEMA LAB ONE', key: 'Sistema' },
+    { value: 'MAQUINARIA', key: 'Maquinaria' },
+    { value: 'CONTÁCTANOS', key: 'Contacto' }
+  ]
+
 
   return (
     <AppContextProvider>

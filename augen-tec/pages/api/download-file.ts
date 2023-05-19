@@ -1,7 +1,8 @@
 import fs from 'fs';
+import { NextApiRequest, NextApiResponse } from 'next';
 import path from 'path';
 
-export default function handler(req, res) {
+export default function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log(path.join(process.cwd(), 'app/public/files/brochure.pdf'));
   const rutaArchivo = path.join(process.cwd(), 'app/public/files/brochure.pdf');
 
