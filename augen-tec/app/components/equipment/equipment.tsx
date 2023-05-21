@@ -26,17 +26,20 @@ export interface EquipmentModel {
   text: string;
 }
 
-export default function equipment({
+const Equipment = ({
   imgData,
   colorBorder,
   title,
   text,
   id,
-}: EquipmentModel) {
+}: EquipmentModel) => {
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
+    const currentImageRef = imageRef.current;
+    const currentTextRef = textRef.current;
+
     AOS.init({
       duration: 900,
       easing: "ease",
@@ -52,29 +55,27 @@ export default function equipment({
       });
     });
 
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
+    if (currentImageRef) {
+      observer.observe(currentImageRef);
     }
 
-    if (textRef.current) {
-      observer.observe(textRef.current);
+    if (currentTextRef) {
+      observer.observe(currentTextRef);
     }
 
     // Clean up the observer
     return () => {
-      if (imageRef.current) {
-        observer.unobserve(imageRef.current);
+      if (currentImageRef) {
+        observer.unobserve(currentImageRef);
+      }
+      if (currentTextRef) {
+        observer.unobserve(currentTextRef);
       }
     };
   }, []);
 
   return (
-    <Grid
-      container
-      xs={12}
-      md={6}
-      className={styles.container}
-      id={id || title}>
+    <Grid container className={styles.container} id={id || title}>
       {colorBorder.position == BorderPosition.left && (
         <Grid item xs={1} style={{ backgroundColor: colorBorder.color }}></Grid>
       )}
@@ -112,4 +113,6 @@ export default function equipment({
       )}
     </Grid>
   );
-}
+};
+
+export default Equipment;

@@ -5,6 +5,7 @@ import styles from "./content.module.css";
 import { Grid } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { detectContentType } from "next/dist/server/image-optimizer";
 
 export interface ContentProps {
   id?: string;
@@ -17,17 +18,14 @@ export interface ContentProps {
   colorTitle?: { color: string; text: string };
 }
 
-export default function content({
-  imgData,
-  title,
-  text,
-  colorTitle,
-  id,
-}: ContentProps) {
+const Content = ({ imgData, title, text, colorTitle, id }: ContentProps) => {
   const imageRef = useRef(null);
   const textRef = useRef(null);
 
   useEffect(() => {
+    const currentImageRef = imageRef.current;
+    const currentTextRef = textRef.current;
+
     AOS.init({
       duration: 900,
       easing: "ease",
@@ -43,24 +41,27 @@ export default function content({
       });
     });
 
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
+    if (currentImageRef) {
+      observer.observe(currentImageRef);
     }
 
-    if (textRef.current) {
-      observer.observe(textRef.current);
+    if (currentTextRef) {
+      observer.observe(currentTextRef);
     }
 
     // Clean up the observer
     return () => {
-      if (imageRef.current) {
-        observer.unobserve(imageRef.current);
+      if (currentImageRef) {
+        observer.unobserve(currentImageRef);
+      }
+      if (currentTextRef) {
+        observer.unobserve(currentTextRef);
       }
     };
   }, []);
 
   return (
-    <Grid container xs={12} md={6} id={id || title}>
+    <Grid container id={id || title}>
       <Grid item xs={12} md={5} ref={imageRef} data-aos="fade-up">
         <Image
           src={imgData.src}
@@ -86,4 +87,6 @@ export default function content({
       </Grid>
     </Grid>
   );
-}
+};
+
+export default Content;

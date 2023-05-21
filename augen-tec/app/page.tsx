@@ -4,38 +4,38 @@ import Header from "./components/header/Header";
 import Content from "./components/content/content";
 import Equipment from "./components/equipment/equipment";
 import Contact from "./components/contact/contact";
-import Menu, { MenuOption } from './components/menu/menu';
-import YouTube from 'react-youtube';
-import localFont from 'next/font/local';
-import styles from './page.module.css';
-const Raleway = localFont({ src: '../app/public/fonts/Raleway-VariableFont_wght.ttf' });
-import DownloadForOfflineIcon from '@mui/icons-material/DownloadForOffline';
+import Menu, { MenuOption } from "./components/menu/menu";
+import YouTube from "react-youtube";
+import localFont from "next/font/local";
+import styles from "./page.module.css";
+const Raleway = localFont({
+  src: "../app/public/fonts/Raleway-VariableFont_wght.ttf",
+});
+import DownloadForOfflineIcon from "@mui/icons-material/DownloadForOffline";
 import { Grid } from "@mui/material";
 import { AppContextProvider } from "./page-context";
 import Footer from "./components/footer/footer";
 
-const videoId = 'pS-J14hPrlI';
+const videoId = "pS-J14hPrlI";
 const opts = {
-  width: '100%',
-  height: '500px',
+  width: "100%",
+  height: "500px",
   playerVars: {
     autoplay: false,
   },
 };
 export default function Home() {
-
   const handleDownloadBrochureClick = () => {
-    window.open('/api/download-file', '_blank');
-  }
+    window.open("/api/download-file", "_blank");
+  };
 
   // Esto debe coincidir con el id establecido en /public/texts/es.ts
   const MenuOptions: MenuOption[] = [
-    { value: 'AUGEN TEC', key: 'AugenTec' },
-    { value: 'SISTEMA LAB ONE', key: 'Sistema' },
-    { value: 'MAQUINARIA', key: 'Maquinaria' },
-    { value: 'CONTÁCTANOS', key: 'Contacto' }
-  ]
-
+    { value: "AUGEN TEC", key: "AugenTec" },
+    { value: "SISTEMA LAB ONE", key: "Sistema" },
+    { value: "MAQUINARIA", key: "Maquinaria" },
+    { value: "CONTÁCTANOS", key: "Contacto" },
+  ];
 
   return (
     <AppContextProvider>
@@ -47,13 +47,15 @@ export default function Home() {
         <Grid container className={styles.equipmentContainer}>
           {esData.main.map((item) => {
             return (
-              <Content
-                id={item.id}
-                key={item.imageData.alt}
-                imgData={item.imageData}
-                colorTitle={item.colorTitle}
-                title={item.title}
-                text={item.text}></Content>
+              <Grid item xs={12} md={6} key={item.id || item.title}>
+                <Content
+                  id={item.id}
+                  key={item.imageData.alt}
+                  imgData={item.imageData}
+                  colorTitle={item.colorTitle}
+                  title={item.title}
+                  text={item.text}></Content>
+              </Grid>
             );
           })}
         </Grid>
@@ -61,19 +63,26 @@ export default function Home() {
         <Grid container className={styles.equipmentContainer}>
           {esData.equipos.map((item) => {
             return (
-              <Equipment
-                id={item.id}
-                key={item.imageData.alt}
-                imgData={item.imageData}
-                colorBorder={item.colorBorder}
-                title={item.title}
-                text={item.text}></Equipment>
+              <Grid item xs={12} md={6} key={item.id || item.title}>
+                <Equipment
+                  id={item.id}
+                  key={item.imageData.alt}
+                  imgData={item.imageData}
+                  colorBorder={item.colorBorder}
+                  title={item.title}
+                  text={item.text}></Equipment>
+              </Grid>
             );
           })}
         </Grid>
         <Grid container justifyContent={"center"}>
-          <span onClick={handleDownloadBrochureClick} className={styles.downloadButton}>
-            <DownloadForOfflineIcon sx={{ color: "#007960", fontSize: "50px", marginRight: "20px" }} /> Descargar Brochure
+          <span
+            onClick={handleDownloadBrochureClick}
+            className={styles.downloadButton}>
+            <DownloadForOfflineIcon
+              sx={{ color: "#007960", fontSize: "50px", marginRight: "20px" }}
+            />{" "}
+            Descargar Brochure
           </span>
         </Grid>
         <Contact {...esData.contact}></Contact>
