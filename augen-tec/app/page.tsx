@@ -26,7 +26,7 @@ const opts = {
 };
 export default function Home() {
   const handleDownloadBrochureClick = () => {
-    window.open("/api/download-file", "_blank");
+    window.open("https://drive.google.com/file/d/1RAuDk30IpJ31xpRMts0wAa5XoSrpgWmg/view?pli=1", "_blank");
   };
 
   // Esto debe coincidir con el id establecido en /public/texts/es.ts
